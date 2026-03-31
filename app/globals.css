@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1e3a5f;
+  --gold: #d4af37;
+  --text: #0f1e32;
+}
+
+@layer base {
+  body {
+    color: #1e3a5f;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    color: #1e3a5f;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 font-semibold rounded-lg transition-colors;
+    background-color: #d4af37;
+    color: #1e3a5f;
+  }
+
+  .btn-primary:hover {
+    background-color: #b8961f;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 font-semibold rounded-lg transition-colors text-white;
+    background-color: #1e3a5f;
+  }
+
+  .btn-secondary:hover {
+    background-color: #2d4563;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 font-semibold rounded-lg transition-colors;
+    border-color: #d4af37;
+    color: #d4af37;
+  }
+
+  .btn-outline:hover {
+    background-color: #fffbf0;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow;
+    border: 1px solid #d9e5f0;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+    color: #1e3a5f;
+  }
+
+  .section-subtitle {
+    @apply text-lg mb-8;
+    color: #486f95;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
